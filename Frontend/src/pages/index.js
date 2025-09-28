@@ -1,0 +1,5 @@
+export {default as Home} from './Home.jsx'
+export {default as Pricing} from './Pricing.jsx'
+export {default as Blogs} from './Blogs.jsx'
+export {default as Login} from './Login.jsx'
+export {default as Signup} from './Signup.jsx'
