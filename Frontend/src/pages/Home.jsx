@@ -4,7 +4,11 @@ import {Navbar, HeroSection, Features, About, Testimonials, CTASection, Footer} 
 function Home() {
   return (
     <div>
-      
+      <HeroSection />
+      <Features />
+      <About />
+      <Testimonials />
+      <CTASection />
     </div>
   )
 }
