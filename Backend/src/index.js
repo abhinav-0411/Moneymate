@@ -1,17 +1,18 @@
-import express from 'express'
+import express from "express";
+import dotenv from "dotenv";
+import connectDB from "./config/db.js";
+import authRoutes from "./routes/auth.routes.js";
+import transactionRoutes from "./routes/transaction.routes.js";
+
+dotenv.config();
+connectDB();
 
 const app = express();
+app.use(express.json());
 
-const port = 3000;
-app.get('/', (req, res) => {
-    res.send("Server is running fine.")
-})
+// Routes
+app.use("/api/auth", authRoutes);
+app.use("/api/transactions", transactionRoutes);
 
-app.get('/login', (req, res) => {
-    res.send("Server is loggin in.")
-})
-
-
-app.listen(port, () => {
-    console.log("Server is running on port 3000.")
-})
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
